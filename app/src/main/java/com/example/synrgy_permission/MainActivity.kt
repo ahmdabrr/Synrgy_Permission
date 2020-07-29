@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         get() = "https://images.vexels.com/media/users/3/152641/isolated/preview/2b3d63661f0d7fe62c36168604985f26-space-cosmonaut-cartoon-by-vexels.png"
         set(value) = TODO()
 
-    @RequiresApi(VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -60,11 +59,11 @@ class MainActivity : AppCompatActivity() {
         fusedLocation.lastLocation.addOnSuccessListener(
             this
         ) { location -> // Do it all with location
-            Log.d("Location", "Lat : ${location?.latitude} Long : ${location?.longitude}")
+            Log.d("Location", "Lat : ${location.latitude} Long : ${location.longitude}")
             // Display in Toast
             Toast.makeText(
-                this@MainActivity,
-                "Longitude dan Latitude didapatkan ${location?.longitude}, ${location?.latitude} . Silakan Cek Logcat",
+                this,
+                "Longitude dan Latitude didapatkan ${location.longitude}, ${location.latitude} . Silakan Cek Logcat",
                 Toast.LENGTH_LONG
             ).show()
         }
